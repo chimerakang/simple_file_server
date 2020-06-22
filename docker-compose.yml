@@ -1,6 +1,6 @@
 version: '3.1'
 services:
-  chimerakang/simeple_file_server:
+  simeple_file_server:
     build:
       context: .
       dockerfile: Dockerfile
