@@ -1,0 +1,11 @@
+version: '3.1'
+services:
+  chimerakang/simeple_file_server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 2077:2077
+    volumes:
+      - /home/data/simple_file_server/files:/go/src/github.com/chimerakang/simple_file_server/downloads
+    restart: always
