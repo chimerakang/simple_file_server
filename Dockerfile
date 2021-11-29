@@ -8,11 +8,12 @@ WORKDIR $GOPATH/src/github.com/chimerakang/simple_file_server/downloads
 
 WORKDIR $GOPATH/src/github.com/chimerakang/simple_file_server/public
 copy public/* ./
-RUN ls -l
+#RUN ls -l
 
 WORKDIR $GOPATH/src/github.com/chimerakang/simple_file_server
 copy *.go ./
-RUN go get ./...
+copy go.* ./
+RUN go mod download
 RUN go build
 
 EXPOSE 2077
